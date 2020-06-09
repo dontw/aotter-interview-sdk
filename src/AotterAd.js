@@ -2,7 +2,7 @@ const API_URL = "http://localhost:3000";
 
 const onAdLoadedEvent = new CustomEvent("on-ad-loaded");
 const onAdFailedEvent = new CustomEvent("on-ad-failed");
-// const onAdImpressionEvent = new CustomEvent('on-ad-impression');
+const onAdImpressionEvent = new CustomEvent('on-ad-impression');
 
 export default {
     impressionStatus: false,
@@ -139,6 +139,7 @@ export default {
             //check impresseion percentage 1 second later
             setTimeout(() => {
                 if (this.checkAdElmPercentage(adElm, PERCENTAGE)) {
+                    document.dispatchEvent(onAdImpressionEvent);
                     if (!this.checkAdImpressionUrl(url)) {
                         this.sendAdImpression(url);
                     }
