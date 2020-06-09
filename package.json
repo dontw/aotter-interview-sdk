@@ -1,0 +1,19 @@
+{
+    "name": "aotter-interview-sdk",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "predev": "rm -rf dist .cache",
+        "dev": "parcel serve src/example.html --port 80",
+        "prebuild": "rm -rf dist",
+        "build": "parcel build src/index.js --out-file aotter-ad.min.js --no-source-maps",
+        "server": "node server/index.js",
+        "demo": "http-server",
+        "test": "node src/test.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "http-server": "^0.12.3"
+    }
+}
