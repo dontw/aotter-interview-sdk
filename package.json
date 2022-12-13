@@ -13,7 +13,7 @@
         "test": "node src/test.js"
     },
     "dependencies": {
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "http-server": "^0.12.3"
     }
 }
